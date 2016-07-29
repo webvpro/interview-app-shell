@@ -14,8 +14,8 @@ class Layout extends React.Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
                 </head>
                 <body>
-                    <main role="application">hello!</main>
-                    <script type="text/javascript" src="assets/javascripts/app.js" />
+                    <main role="application"></main>
+                    <script type="text/javascript" src="javascripts/app.js" />
                     <script type="text/javascript">start()</script>
                 </body>
             </html>

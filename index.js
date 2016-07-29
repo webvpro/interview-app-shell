@@ -1,7 +1,8 @@
 var serverPort = 3000;
 var http = require('http');
 var path = require('path');
-var app = require('express')();
+var express = require('express');
+var app = express();
 var log = require('bunyan')
     .createLogger({
         name: 'miniProject',
@@ -14,6 +15,8 @@ var log = require('bunyan')
             }
         ]
     });
+
+app.use(express.static(path.resolve(__dirname, './public')));
 
 require('babel-register')({
     ignore: false,
