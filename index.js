@@ -35,6 +35,10 @@ app.get('/', function (req, res) {
     res.send('<!DOCTYPE html>' + markup);
 });
 
+app.get('/api/incoming', function (req, res) {
+    res.send(require('./server/mockData/incoming.json'));
+});
+
 var server = http.createServer(app);
 server.listen(serverPort);
 server.on('listen', function () {
