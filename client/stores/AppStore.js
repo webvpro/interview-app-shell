@@ -13,10 +13,12 @@ import {observable} from 'mobx';
 class AppState {
     @observable state = {
         // props go here
+        randomKey: 'Hello WOrld'
     };
 
     someAction = () => {
         // modify a prop?
+        this.state.randomKey = 'Hello Squirrel';
     }
 }
 
