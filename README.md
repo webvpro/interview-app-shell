@@ -17,14 +17,14 @@ Project uses basic webpack + express based template allowing for use of ES6 and 
 
 ## Project Requirements
 App's purpose is to track near doomsday misses. By calling the /api/incoming endpoint, the app can get a response which includes all near earth objects (NEO) over a small date range (data pulled from NASA). The app will then display this data as follows:
+- Users can select from the number of days they wish to see (1,2,3, etc) ranging from 1 - the total number of days returned by the api
+- A selection of 1 will filter the data for only the first (earliest) day returned, a selection of 2 will filter for the earliest and the next earliest day, etc. 
+- Default days selection is the total number of days returned by the api
+- Resulting beginning and end days based upon days selected should be presented to the user
 - The top of the application should present the user with aggregate information for the selected time range to include the following metrics:
   - Closest miss in miles based upon the selected time range
   - Fastest NEO in KPH based upon selected time range
   - Largest NEO in meters based upon selected time range
-- Users can select from a list of available dates to specify what they want the start date to be.
-- Users can select from a list of available dates to specify what they want the end date to be.
-- Default selection for start date is earliest date returned from the API.
-- Default selection for end date is the latest date returned from the API.
 - App will display a table where each row represents a single near earth object recorded between the beginning and end dates (inclusive)
   - Column 1 will be the NEO name
   - Column 2 will be the NEO close approach date
@@ -35,3 +35,7 @@ App's purpose is to track near doomsday misses. By calling the /api/incoming end
 
 ## Restrictions:
 Lodash / Underscore libraries are not permitted, data manipulation should use either built in JS Array or Immutable JS functions
+
+## Tips:
+We're not expecting you to update any of the code outside of the /client directory. You can call in extra packages if you wish, but your main focus should be on achieving the functionality above with the mindset of leaving design implementation for a later iteration.
+Requirements above are listed in order of priority.
