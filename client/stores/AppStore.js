@@ -3,24 +3,29 @@
     Here we've set up a state store for you so all of your time isn't wasted on the endless wasteland of blog posts
     related to why one flux implementation is better than another. In fact, we're not even really using a 100% flux
     type setup here. There's some minor magic going on here, the important thing to know is that we're using a mobx
-    based store to implement some reactive programming into our data structure. Feel free to move the observables
-    around in this store and control how they're populated into the app if you have a deeper understanding of mobx
-    otherwise just add additional properties on to the state object below and it'll already be spread onto the top
-    level of the app in a semi flux fashion. Modify pieces of your magical state with functions like someAction below.
- */
-import {observable} from 'mobx';
+    based store to implement some reactive programming into our data structure.
 
-class AppState {
-    @observable state = {
-        // props go here
-        randomKey: 'Hello WOrld'
+    Add new observable properties on to our store object and modify them via store methods like below with exampleKey
+    and modifyExample. For more complex views of your observable objects, use a computed property like exampleKeyExtended
+    below. Computed properties allow you to observe modified representations of other objects
+ */
+import {observable, computed} from 'mobx';
+
+class AppStore {
+    // state goes here
+    @observable exampleTitle = 'The Doomsday Watcher';
+    @observable exampleKey = 'Hello';
+    @observable secondExampleKey = 'World';
+    @computed get exampleKeyExtended() {
+        return `${this.exampleKey} ${this.secondExampleKey}`;
     };
 
-    someAction = () => {
-        // modify a prop?
-        this.state.randomKey = 'Hello Squirrel';
+    modifyExample = () => {
+        this.secondExampleKey = this.secondExampleKey === 'World' ?
+            'Squirrel' :
+            'World';
     }
 }
 
-let store = new AppState();
+let store = new AppStore();
 module.exports = store;

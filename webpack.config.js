@@ -9,6 +9,7 @@ module.exports = {
         filename: '[name].js',
         path: path.join(__dirname, 'public/javascripts')
     },
+    devtool: 'source-map',
     module: {
         loaders: [
             {

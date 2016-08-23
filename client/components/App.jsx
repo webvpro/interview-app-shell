@@ -1,16 +1,15 @@
 'use strict';
-import {observer} from 'mobx-react';
+import {observer} from 'mobx-react'; // <-- That's store based magic, for now just think about it as making the following component watch when our state store changes
 import AppStore from '../stores/AppStore';
 import AppBody from './AppBody';
 
-// <-- That's store based magic, for now just think about it as making the following component watch when our state store changes
 module.exports = observer(() => {
     return (
         <main>
             <header>
-                The Doomsday Watcher
+                <h1>{AppStore.exampleTitle}</h1>
             </header>
-            <AppBody {...AppStore.state} />
+            <AppBody Store={AppStore} />
         </main>
     )
-}) ;
+});
