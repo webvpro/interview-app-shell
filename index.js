@@ -18,6 +18,8 @@ var log = require('bunyan')
 
 app.use(express.static(path.resolve(__dirname, './public')));
 
+// disabling performance cache so that we can avoid potential sudo issues on installations
+process.env.BABEL_DISABLE_CACHE = 1;
 require('babel-register')({
     ignore: false,
     presets: ['es2015', 'react'],

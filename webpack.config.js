@@ -35,11 +35,6 @@ module.exports = {
         extensions: ['', '.jsx', '.js', '.json']
     },
     stats: {
-        errorDetails: true,
-        json: true,
-        modules: true,
-        chunks: true,
-        errorDetails: true,
-        source: false
+        errorDetails: true
     }
 };
