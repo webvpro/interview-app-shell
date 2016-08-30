@@ -18,6 +18,7 @@ var log = require('bunyan')
 
 app.use(express.static(path.resolve(__dirname, './public')));
 
+process.env.BABEL_CACHE_PATH = path.join(__dirname, '.babel.json');
 require('babel-register')({
     ignore: false,
     presets: ['es2015', 'react'],

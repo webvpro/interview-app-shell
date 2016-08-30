@@ -36,10 +36,5 @@ module.exports = {
     },
     stats: {
         errorDetails: true,
-        json: true,
-        modules: true,
-        chunks: true,
-        errorDetails: true,
-        source: false
     }
 };
