@@ -2,7 +2,7 @@
 Basic Express based app for serving up a React based application
 
 ## Basic Details
-Start server via "npm start"
+Install dependencies via "npm install". Then, start server via "npm start"
 Running server can be accessed via localhost:3000
 
 Work goes in the /client folder. Everything required in here is transpiled down from ES6/ES7 to standard ES5 using webpack and babel.
